@@ -1,12 +1,49 @@
+
 alias repo='git init'
 alias clone='git clone'
+
 alias add='git add'
+alias unadd='git rm --cached'
+
 alias save='git commit -m'
 alias save_ch='git commit -am'
+
 alias state='git status'
+
 alias branches='git branch'
 alias create='git checkout -b'
+alias switch='git checkout'
+#switch - to go back to HEAD before checkout
+
+
 alias download='git pull'
 alias push='git push origin master'
-alias logs='git log --oneline'
-alias switch='git checkout'
+
+alias log='git log --oneline'
+alias logs='git log --oneline --graph --all'
+
+alias revert='git revert'
+# example: revert HEAD
+#revert will add another commit where the latest commit is undone.
+#but the commit remain in history. This is a good 'undo' strategy
+#when working with public shared repository
+
+
+alias hard_reset='git reset --hard'
+# example: hard_reset a1e8fb5
+#hard_reset will reset the commit history to that specified commit.
+#commits after this, will be deleted. Not recommended with public repos.
+
+alias amend='git commit --amend'
+#amend will undo the last commit. We use it we prematurely commit something.
+#After new changes staged, we use amend, so git let us modify the latest commit.
+
+
+# git diff 
+# this will output the changes in the working directory that are not yet
+#staged (added) for a commit. git diff --stat for a summary
+
+#git diff --cached To see only what is staged for commit
+
+
+
